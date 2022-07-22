@@ -3,6 +3,7 @@ import './App.css';
 // import Radium, { StyleRoot } from 'radium';
 import styled from 'styled-components';
 import Person from './Person/Person.js';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 const StyleButton  = styled.button`
@@ -88,12 +89,14 @@ class App extends Component {
         <div>
           {
             this.state.persons.map((person, index) => {
-              return <Person
+              return <ErrorBoundary
+              key={person.id}>
+                <Person
                 click={() => this.deletePersonHandler(index)}
                 name={person.name}
                 age={person.age}
-                key={person.id}
                 changed={(event) => this.nameChangedHandler(event, person.id)} />
+                </ErrorBoundary>
             })
           }
           {/* <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
