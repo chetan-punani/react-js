@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 // import Radium, { StyleRoot } from 'radium';
 import styled from 'styled-components';
-import Person from './Person/Person.js';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Person from '../components/Persons/Person/Person.js';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 
 const StyleButton  = styled.button`
